@@ -65,6 +65,9 @@ function concertThis(search) {
 
 // OMDB
 function movieThis(search) {
+    if (search === undefined) {
+        search = "Mr. Nobody";
+    }
 
     searchHelper(search);
 

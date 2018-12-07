@@ -1,4 +1,4 @@
-// All require node modules
+// All required node modules
 require("dotenv").config();
 var request = require('request');
 var fs = require("fs");
@@ -99,7 +99,7 @@ function doThis(){
     });
 }
 
-// Command conditionals
+// Commands
 switch (command) {
     case "spotify-this-song":
     spotifyThisSong(search);

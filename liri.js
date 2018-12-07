@@ -54,12 +54,48 @@ function concertThis(search) {
             return console.log('Error occurred: ' + error);
         }
         var data = JSON.parse(body);
-        for (i=0;i<data.length;i++){
-        console.log("Venue" + data[i].venue.name);
+        for (i = 0; i < data.length; i++){
+        console.log("Venue: " + data[i].venue.name);
         var date = data[i].datetime;
         date = moment(date).format("MM/DD/YYYY");
         console.log("Date: " + date)
         }
+    });
+}
+
+// OMDB
+function movieThis(search) {
+
+    searchHelper(search);
+
+    request("https://www.omdbapi.com/?t=" + search + "&y=&plot=short&apikey=trilogy", function(error, response, body) {
+        if (error) {
+            return console.log('Error occurred: ' + error);
+        }
+        var data = JSON.parse(body);
+        console.log("Title: " + data.Title);
+        console.log("Year: " + data.Year);
+        console.log("Rated: " + data.Rated);
+        console.log("Country: " + data.Country);
+        console.log("Language: " + data.Language);
+        console.log("Plot: " + data.Plot);
+        console.log("Actors: " + data.Actors);
+        if (data.Ratings[1] === undefined) {
+            console.log("Rotten Tomatoes: N/A");
+        } else {
+            console.log("Rotten Tomatoes: " + data.Ratings[1].Value);
+        }
+    });
+}
+
+// Do What It Says
+function doThis(){
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        if (error) {
+            return console.log('Error occurred: ' + error);
+        }
+        var data = data.split(",");
+        spotifyThisSong(data[1]); 
     });
 }
 
@@ -70,6 +106,12 @@ switch (command) {
     break;
     case  "concert-this":
     concertThis(search);
+    break;
+    case  "movie-this":
+    movieThis(search);
+    break;
+    case "do-what-it-says":
+    doThis();
     break;
     default:
     console.log("Please enter a valid command.");

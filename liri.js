@@ -6,7 +6,6 @@ var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 var moment = require('moment');
-moment().format();
 
 // Node processes
 var command = process.argv[2];
@@ -31,7 +30,7 @@ function spotifyThisSong(search) {
         search = "The Sign Ace Of Base";
     }
 
-    searchHelper(search);
+    searchHelper();
 
     spotify.search({ type: 'track', query: search}, function(error, data) {
         if (error) {
@@ -47,7 +46,7 @@ function spotifyThisSong(search) {
 // Bands In Town
 function concertThis(search) {
 
-    searchHelper(search);
+    searchHelper();
 
     request("https://rest.bandsintown.com/artists/" + search + "/events?app_id=codingbootcamp", function(error, response, body) {
         if (error) {
@@ -69,7 +68,7 @@ function movieThis(search) {
         search = "Mr. Nobody";
     }
 
-    searchHelper(search);
+    searchHelper();
 
     request("https://www.omdbapi.com/?t=" + search + "&y=&plot=short&apikey=trilogy", function(error, response, body) {
         if (error) {

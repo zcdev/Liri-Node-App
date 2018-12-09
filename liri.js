@@ -32,7 +32,7 @@ function spotifyThisSong(search) {
 
     searchHelper();
 
-    spotify.search({ type: 'track', query: search}, function(error, data) {
+    spotify.search({ type: 'track', query: search, limit: 1}, function(error, data) {
         if (error) {
             return console.log('Error occurred: ' + error);
         }

@@ -39,8 +39,8 @@ function spotifyThisSong(search) {
         console.log("Song Name: " + data.tracks.items[0].name);
         data.tracks.items.forEach(function (track) {
             console.log("Artists: " + track.artists[0].name);
-            console.log("Link to the song: " + track.album.href);
-            console.log("Your song is from the " + track.album.name + " album");
+            console.log("Song Link: " + track.album.href);
+            console.log("Album: " + track.album.name);
         });
     });
 }

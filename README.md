@@ -46,5 +46,5 @@ Will display the default info.
 * Moment.js
 * Spotify API
 * Bands In Town API
-* IMDB API
+* OMDb API
 

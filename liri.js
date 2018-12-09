@@ -36,10 +36,11 @@ function spotifyThisSong(search) {
         if (error) {
             return console.log('Error occurred: ' + error);
         }
-        console.log("Artist Name: " + data.tracks.items[0].artists[0].name);
-        console.log("Song Name: " + data.tracks.items[0].name);
-        console.log("Link to the song: " + data.tracks.items[0].album.href);
-        console.log("Your song is from the " + data.tracks.items[0].album.name + " album");
+        data.tracks.items.forEach(function (track, index) {
+            console.log("Artists: " + track.artists[0].name);
+            console.log("Link to the song: " + track.album.href);
+            console.log("Your song is from the " + track.album.name + " album");
+        });
     });
 }
 

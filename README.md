@@ -6,7 +6,7 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
 **Commands:**
 
-`spotify-this-song` [name of song]
+`spotify-this-song` |name of song|
 
 Will give you all the info about the song you queried:
 
@@ -15,15 +15,15 @@ Will give you all the info about the song you queried:
 * A preview link of the song from Spotify
 * The album that the song is from
 
-`concert-this` [name of artist]
+`concert-this` |name of artist|
 
 Will give you all the info about the events of the artist you queried:
 
-*Name of the venue
-*Venue location
-*Date of the Event
+* Name of the venue
+* Venue location
+* Date of the Event
 
-`movie-this` [name of movie]
+`movie-this` |name of movie|
 
 Will give you all the info about the movie you queried:
 
@@ -42,9 +42,9 @@ Will display the default info.
 
 # Technologies
 
-Node.js
-Moment.js
-Spotify API
-Bands In Town API
-IMDB API
+* Node.js
+* Moment.js
+* Spotify API
+* Bands In Town API
+* IMDB API
 

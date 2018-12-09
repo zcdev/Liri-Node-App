@@ -36,7 +36,7 @@ function spotifyThisSong(search) {
         if (error) {
             return console.log('Error occurred: ' + error);
         }
-        data.tracks.items.forEach(function (track, index) {
+        data.tracks.items.forEach(function (track) {
             console.log("Artists: " + track.artists[0].name);
             console.log("Link to the song: " + track.album.href);
             console.log("Your song is from the " + track.album.name + " album");
